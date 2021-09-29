@@ -81,7 +81,7 @@ class Login extends Component {
                                 <input type={this.state.isShowPassword ? 'text' : 'password'} className="form-control" placeholder="Enter your Password" onChange={(event) => {this.handleOnChangePassword(event)}}/>
                                 <span
                                     onClick={() => {this.handleShowHidePassword()}}
-                                ><i class={this.state.isShowPassword ? 'far fa-eye' : 'far fa-eye-slash'}></i></span>
+                                ><i className={this.state.isShowPassword ? 'far fa-eye' : 'far fa-eye-slash'}></i></span>
                                 
                             </div>
                         </div>
@@ -98,8 +98,8 @@ class Login extends Component {
                             <span className="text-other-login">Or login with:</span>
                         </div>
                         <div className="col-12 social-login">
-                            <i class="fab fa-google-plus-g google"></i>
-                            <i class="fab fa-facebook-f facebook"></i>
+                            <i className="fab fa-google-plus-g google"></i>
+                            <i className="fab fa-facebook-f facebook"></i>
                         </div>
                     </div>
                 </div>
