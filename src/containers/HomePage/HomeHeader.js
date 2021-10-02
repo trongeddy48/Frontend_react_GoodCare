@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './HomeHeader.scss';
+import logo from '../../assets/logogc.png'
 
 class HomeHeader extends Component {
 
@@ -12,7 +13,7 @@ class HomeHeader extends Component {
                 <div className="home-header-content">
                     <div className="left-content">
                         <i className="fas fa-bars"></i>
-                        <div className="header-logo"></div>
+                        <img className="header-logo" src={logo} />
                     </div>
                     <div className="center-content">
                         <div className="child-content">
@@ -34,7 +35,8 @@ class HomeHeader extends Component {
                     </div>
                     <div className="right-content">
                         <div className="support"><i className="fas fa-question-circle"></i> Hỗ trợ</div>
-                        <div className="flag">VN</div>
+                        <div className="language-vi">VN</div>
+                        <div className="language-en">EN</div>
                     </div>
                 </div>
             </div>
@@ -62,7 +64,7 @@ class HomeHeader extends Component {
                             <div className="text-child">Khám Tổng quát</div>
                         </div>
                         <div className="option-child">
-                            <div className="icon-child"><i className="fas fa-microscope"></i></div>
+                            <div className="icon-child"><i className="fas fa-flask"></i></div>
                             <div className="text-child">Xát nghiệm y học</div>
                         </div>
                         <div className="option-child">
@@ -70,7 +72,7 @@ class HomeHeader extends Component {
                             <div className="text-child">Sức khỏe tinh thần</div>
                         </div>
                         <div className="option-child">
-                            <div className="icon-child"><i className="fas fa-tooth"></i></div>
+                            <div className="icon-child"><i className="fas fa-briefcase-medical"></i></div>
                             <div className="text-child">Khám Nha khoa</div>
                         </div>
                     </div>
@@ -84,7 +86,8 @@ class HomeHeader extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.user.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn,
+        language: state.app.language,
     };
 };
 
