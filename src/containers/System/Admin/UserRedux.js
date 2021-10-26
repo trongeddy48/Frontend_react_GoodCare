@@ -6,6 +6,7 @@ import * as actions from "../../../store/actions";
 import './UserRedux.scss';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import TableManageUser from './TableManageUser';
 
 class UserRedux extends Component {
     constructor(props) {
@@ -56,6 +57,21 @@ class UserRedux extends Component {
             this.setState({
                 roleArr: arrRoles,
                 role: arrRoles && arrRoles.length > 0 ? arrRoles[0].key : ''
+            })
+        }
+
+        if(prevProps.listUsers !== this.props.listUsers){
+            this.setState({
+                email: '',
+                password: '',
+                firstName: '',
+                lastName: '',
+                phonenumber: '',
+                address: '',
+                gender: '',
+                position: '',
+                role: '',
+                avatar: '',
             })
         }
     }
@@ -233,36 +249,35 @@ class UserRedux extends Component {
                                     <div className="preview-img-container">
                                         <input id="previewImg" type="file" hidden 
                                         onChange={(event) => this.handleOnchangeImage(event)}
-                                        
                                         />
                                         <label className="label-upload" htmlFor="previewImg">Tải ảnh lên <i className="fas fa-upload"></i></label>
                                         <div className="preview-image"
                                             style={{ backgroundImage: `url(${this.state.previewImgURL})`}}
                                             onClick={() => this.openPreviewImage()}
                                         >
-                                            
                                         </div>
                                     </div>
-                                    
                                 </div>
-                                <div className="col-12 mt-3">
+                                <div className="col-12 my-3">
                                     <button className="btn btn-primary"
                                     onClick={() => this.handleSaveUser()}
-                                    
                                     ><FormattedMessage id="manage-user.save"/></button>
+                                </div>
+
+                                <div className="col-12 mb-5">
+                                    <TableManageUser />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            
-            {this.state.isOpen === true &&
-                <Lightbox
-                    mainSrc={this.state.previewImgURL}
-                    onCloseRequest={() => this.setState({ isOpen: false })}
-                />
-            }
-            </div>
+                {this.state.isOpen === true &&
+                    <Lightbox
+                        mainSrc={this.state.previewImgURL}
+                        onCloseRequest={() => this.setState({ isOpen: false })}
+                    />
+                }
+        </div>
         )
     }
 }
@@ -274,6 +289,7 @@ const mapStateToProps = state => {
         positionRedux: state.admin.positions,
         roleRedux: state.admin.roles,
         isLoadingGender: state.admin.isLoadingGender,
+        listUsers: state.admin.users
     };
 };
 
@@ -285,7 +301,10 @@ const mapDispatchToProps = dispatch => {
 
         getRoleStart: () => dispatch(actions.fetchRoleStart()),
 
-        createNewUser: (data) => dispatch(actions.createNewUser(data))
+        createNewUser: (data) => dispatch(actions.createNewUser(data)),
+
+        fetchUserRedux: () => dispatch(actions.fetchAllUsersStart())
+
         // processLogout: () => dispatch(actions.processLogout()),
         // changeLanguageAppRedux: (language) => dispatch(actions.changeLanguageApp(language))
     };
