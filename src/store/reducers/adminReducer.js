@@ -48,7 +48,7 @@ const adminReducer = (state = initialState, action) => {
                 ...state
             }
         
-        case actionTypes.FETCH_ROLE_FAIDED:
+        case actionTypes.FETCH_ROLE_FAILED:
             state.roles = [];
             return {
                 ...state
