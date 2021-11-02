@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import Slider from 'react-slick';
 import * as actions from '../../../store/actions';
-import { LANGUAGES } from '../../../utils'
+import { LANGUAGES } from '../../../utils';
+import { withRouter } from 'react-router';
 
 class OutStandingDoctor extends Component {
     constructor(props) {
@@ -25,11 +26,15 @@ class OutStandingDoctor extends Component {
         this.props.loadTopDoctors();
     }
 
+    handleViewDetailDoctor = (doctor) => {
+        console.log('view info doctor: ', doctor)
+        this.props.history.push(`/detail-doctor/${doctor.id}`)
+    }
+
     render() {
         let arrDoctors = this.state.arrDoctors;
         let { language } = this.props;
         // arrDoctors = arrDoctors.concat(arrDoctors).concat(arrDoctors)
-        console.log('aasdasd: ', arrDoctors)
         return (
             <div className="section-share section-outstanding-doctor">
                 <div className="section-container">
@@ -53,7 +58,7 @@ class OutStandingDoctor extends Component {
                                 let nameVI = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName}`;
                                 let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
                                 return(
-                                    <div className="section-custom" key={index}>
+                                    <div className="section-custom" key={index} onClick={() => this.handleViewDetailDoctor(item)}>
                                         <div className="custom-border">
                                             <div className="outer-bg">
                                                 <div className="bg-image section-outstanding-doctor"
@@ -92,4 +97,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor));
