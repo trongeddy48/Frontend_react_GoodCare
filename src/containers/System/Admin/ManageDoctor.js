@@ -146,24 +146,59 @@ class ManageDoctor extends Component {
         })
     }
 
+
+
     handleChangeSelect = async (selectedOption) => {
         this.setState({ selectedOption });
-
+        let {listPayment, listPrice, listProvince} = this.state;
         let res = await getDetailInfoDoctor(selectedOption.value);
         if(res && res.errCode === 0 && res.data && res.data.Markdown){
             let markdown = res.data.Markdown;
+
+            let addressClinic = '', nameClinic = '', note = '',
+                paymentId = '', priceId = '', provinceId = '',
+                selectedPayment = '', selectedPrice = '', 
+                selectedProvince = '';
+            
+            if(res.data.Doctor_Info){
+                addressClinic = res.data.Doctor_Info.addressClinic;
+                nameClinic = res.data.Doctor_Info.nameClinic;
+                note = res.data.Doctor_Info.note;
+                paymentId = res.data.Doctor_Info.paymentId;
+                priceId = res.data.Doctor_Info.priceId;
+                provinceId = res.data.Doctor_Info.provinceId;
+
+                selectedPayment = listPayment.find(item => {
+                    return item && item.value === paymentId
+                })
+                selectedPrice = listPrice.find(item => {
+                    return item && item.value === priceId
+                })
+                selectedProvince = listProvince.find(item => {
+                    return item && item.value === provinceId
+                })
+            }
             this.setState({
                 contentMarkdown: markdown.contentMarkdown,
                 contentHTML: markdown.contentHTML,
                 description: markdown.description,
-                hasOldData: true
+                hasOldData: true,
+                addressClinic: addressClinic,
+                nameClinic: nameClinic,
+                note: note,
+                selectedPayment: selectedPayment,
+                selectedPrice: selectedPrice,
+                selectedProvince: selectedProvince,
             })
         }else {
             this.setState({
                 contentMarkdown: '',
                 contentHTML: '',
                 description: '',
-                hasOldData: false
+                hasOldData: false,
+                addressClinic: '',
+                nameClinic: '',
+                note: '',
             })
         }
         
