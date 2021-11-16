@@ -86,7 +86,7 @@
             "email": "Email",
             "address": "Address",
             "reason": "Reason for medical examination",
-            "birthday": "Date if birth",
+            "birthday": "Date of birth",
             "gender": "Genders",
             "confirm": "Confirm",
             "cancel": "Cancel",
