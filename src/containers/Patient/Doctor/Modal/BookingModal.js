@@ -211,6 +211,7 @@ class BookingModal extends Component {
                                     <FormattedMessage id="patient.booking-modal.email" />
                                 </label>
                                 <input className="form-control" 
+                                    type="email"
                                     value={this.state.email}
                                     onChange={(event) => this.handleOnChangeInput(event, 'email')}
                                 />
