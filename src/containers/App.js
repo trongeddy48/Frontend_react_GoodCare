@@ -16,6 +16,7 @@ import { flatMap } from 'lodash';
 import DetailDoctor from './Patient/Doctor/DetailDoctor';
 import Doctor from '../routes/Doctor';
 import VerifyEmail from './Patient/VerifyEmail';
+import DetailSpecialty from './Patient/Specialty/DetailSpecialty';
 
 class App extends Component {
 
@@ -49,8 +50,10 @@ class App extends Component {
                                 <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
                                 <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
                                 <Route path={'/doctor/'} component={userIsAuthenticated(Doctor)} />
+                                
                                 <Route path={path.HOMEPAGE} component={HomePage} />
                                 <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
+                                <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
                                 <Route path={path.VERIFY_EMAIL_BOOKING} component={VerifyEmail} />    
                                 
                             </Switch>
