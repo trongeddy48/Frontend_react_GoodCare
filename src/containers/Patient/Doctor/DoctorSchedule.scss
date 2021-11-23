@@ -25,6 +25,7 @@
         .text-calendar {
             margin: 10px 0;
             color: #333;
+            font-weight: 600;
 
             span {
                 text-transform: uppercase;
@@ -44,14 +45,14 @@
                 padding: 8px 10px;
                 border: none;
                 outline: none;
-                background-color: #45c3d2;
+                background-color: #eeb94a;
                 
                 border-radius: 3px;
                 font-weight: 600;
                 color: #333;
 
                 &:hover {
-                    background-color: #fff04b;
+                    background-color: #45c3d2;
                 }
             }
 
