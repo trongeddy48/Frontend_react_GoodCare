@@ -31,4 +31,15 @@
             }
         }
     }
+    .view-detail-doctor{
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 1px 6px #20212447;
+        border-radius: 8px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
 }

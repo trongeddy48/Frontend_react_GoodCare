@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { FormattedMessage } from 'react-intl';
 import './DetailSpecialty.scss';
 import HomeHeader from '../../HomePage/HomeHeader';
+import HomeFooter from '../../HomePage/HomeFooter';
 import DoctorSchedule from '../Doctor/DoctorSchedule';
 import DoctorExtraInfo from '../Doctor/DoctorExtraInfo';
 import ProfileDoctor from '../Doctor/ProfileDoctor';
@@ -43,10 +44,22 @@ class DetailSpecialty extends Component {
                         })
                     }
                 }
+
+                let dataProvince = resProvince.data;
+                if(dataProvince && dataProvince.length > 0){
+                    dataProvince.unshift({
+                        createdAt: null,
+                        keyMap: 'ALL',
+                        type: 'PROVINCE',
+                        valueEn: 'All',
+                        valueVi: 'Toàn quốc',
+                    })
+                }
+
                 this.setState({
                     dataDetailSpecialty: res.data,
                     arrDoctorId: arrDoctorId,
-                    listProvince: resProvince.data
+                    listProvince: dataProvince ? dataProvince : [],
                 })
             }
         }
@@ -58,8 +71,34 @@ class DetailSpecialty extends Component {
         }
     }
 
-    handleOnChangeSelect = (event) => {
-        console.log('check event: ', event.target.value);
+    handleOnChangeSelect = async (event) => {
+        if(this.props.match && this.props.match.params && this.props.match.params.id){
+            let id = this.props.match.params.id;
+            let location = event.target.value;
+
+            let res = await getAllDetailSpecialtyById({
+                id: id,
+                location: location
+            });
+
+            if(res && res.errCode === 0){
+                let data = res.data;
+                let arrDoctorId = [];
+                if(data && !_.isEmpty(res.data)){
+                    let arr = data.doctorSpecialty;
+                    if(arr && arr.length > 0){
+                        arr.map(item => {
+                            arrDoctorId.push(item.doctorId);
+                        })
+                    }
+                }
+
+                this.setState({
+                    dataDetailSpecialty: res.data,
+                    arrDoctorId: arrDoctorId,
+                })
+            }
+        }
     }
     
     render() {
@@ -100,6 +139,8 @@ class DetailSpecialty extends Component {
                                     <ProfileDoctor 
                                         doctorId={item}
                                         isShowDescriptionDoctor={true}
+                                        isShowLinkDetail={true}
+                                        isShowPrice={false}
                                         // dataTime={dataScheduleTime}
                                     />
                                 </div>
@@ -121,6 +162,7 @@ class DetailSpecialty extends Component {
                     })
                 }
                 </div>
+                <HomeFooter />
             </div>
         );
     }
