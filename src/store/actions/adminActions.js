@@ -2,7 +2,7 @@ import actionTypes from './actionTypes';
 import { getAllCodeService, createNewUserService, 
     getAllUsers, deleteUserService, editUserService, 
     getTopDoctorHomeService, getAllDoctors, saveDetailDoctorService,
-    getAllSpecialty } from "../../services/userService";
+    getAllSpecialty, getAllClinic } from "../../services/userService";
 import { toast } from 'react-toastify';
 
 // export const fetchGenderStart = () => ({
@@ -248,12 +248,12 @@ export const saveDetailDoctor = (data) => {
         try {
             let res = await saveDetailDoctorService(data);
             if(res && res.errCode === 0){
-                toast.success("Save info Doctor success!");
+                toast.success("Lưu thông tin bác sĩ thành công !");
                 dispatch({
                     type: actionTypes.SAVE_DETAIL_DOCTOR_SUCCESS,
                 })
             }else {
-                toast.error("Save info Doctor fail!");
+                toast.error("Lưu thông tin bác sĩ thất bại !");
                 dispatch({
                     type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED
                 })
@@ -300,17 +300,20 @@ export const getRequiredDoctorInfo = () => {
             let resPayment = await getAllCodeService("PAYMENT");
             let resProvince = await getAllCodeService("PROVINCE");
             let resSpecialty = await getAllSpecialty();
+            let resClinic = await getAllClinic();
 
             if(resPrice && resPrice.errCode === 0
                 && resPayment && resPayment.errCode === 0
                 && resProvince && resProvince.errCode === 0
                 && resSpecialty && resSpecialty.errCode === 0
+                && resClinic && resClinic.errCode === 0
                 ){
                     let data = {
                         resPrice: resPrice.data,
                         resPayment: resPayment.data,
                         resProvince: resProvince.data,
-                        resSpecialty: resSpecialty.data
+                        resSpecialty: resSpecialty.data,
+                        resClinic: resClinic.data
                     }
                     dispatch(fetchRequiredDoctorInfoSuccess(data)) 
             }else {

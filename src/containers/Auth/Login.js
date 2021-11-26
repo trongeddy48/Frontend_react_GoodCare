@@ -44,7 +44,8 @@ class Login extends Component {
                 })
             }
             if(data && data.errCode === 0){
-                this.props.userLoginSuccess(data.user)
+                this.props.userLoginSuccess(data.user);
+                alert('Đăng nhập thành công !');
                 console.log('login success')
             }
         }catch(error) {
@@ -55,6 +56,7 @@ class Login extends Component {
                     })
                 }
             }
+            alert('Đăng nhập thất bại !');
             console.log('anhdaden', error.response)
         }
     }
