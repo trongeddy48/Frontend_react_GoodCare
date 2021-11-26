@@ -58,7 +58,9 @@
         "outstanding-doctor": "Bác sĩ nổi bật",
         "more-info": "Xem thêm",
         "specialty-popular": "Chuyên khoa phổ biến",
-        "view-all": "Xem thêm"
+        "view-all": "Xem thêm",
+        "handbook": "Cẩm nang",
+        "view-handbook": "Xem thêm"
     },
     "manage-schedule": {
         "title": "Quản lý lịch khám",

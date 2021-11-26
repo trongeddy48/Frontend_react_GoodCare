@@ -59,7 +59,9 @@
         "outstanding-doctor": "Outstanding Doctors",
         "more-info": "More Info",
         "specialty-popular": "Popular specialties",
-        "view-all": "More Info"
+        "view-all": "More Info",
+        "handbook": "Handbook",
+        "view-handbook": "More Info"
     },
     "manage-schedule": {
         "title": "Manage Schedule",

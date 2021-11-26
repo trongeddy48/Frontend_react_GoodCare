@@ -98,6 +98,10 @@ const createNewHandbook = (data) => {
     return axios.post('/api/create-new-handbook', data)
 }
 
+const getAllHandbook = () => {
+    return axios.get(`/api/get-handbook`)
+}
+
 export { 
     handleLoginApi, getAllUsers,
     createNewUserService, deleteUserService, 
@@ -109,5 +113,5 @@ export {
     postVerifyBookAppointment, createNewSpecialty,
     getAllSpecialty, getAllDetailSpecialtyById,
     createNewClinic, getAllClinic, getAllDetailClinicById,
-    createNewHandbook,
+    createNewHandbook, getAllHandbook, 
 }
