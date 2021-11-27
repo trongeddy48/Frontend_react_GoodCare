@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import Slider from 'react-slick';
 import { getAllHandbook } from '../../../services/userService';
 import './HandBook.scss';
+import { withRouter } from 'react-router';
 
 class HandBook extends Component {
     constructor(props) {
@@ -19,6 +20,12 @@ class HandBook extends Component {
             this.setState({
                 dataHandbook: res.data,
             })
+        }
+    }
+
+    handleViewDetailHandbook = (item) => {
+        if(this.props.history){
+            this.props.history.push(`/detail-handbook/${item.id}`)
         }
     }
 
@@ -38,7 +45,11 @@ class HandBook extends Component {
                             {dataHandbook && dataHandbook.length > 0 &&
                                 dataHandbook.map((item, index) => {
                                     return (
-                                        <div className="section-custom handbook-child" key={index}>
+                                        <div 
+                                            className="section-custom handbook-child" 
+                                            key={index}
+                                            onClick={() => this.handleViewDetailHandbook(item)}
+                                        >
                                             <div 
                                                 className="bg-image section-handbook"
                                                 style={{ backgroundImage: `url(${item.image})` }}
@@ -68,4 +79,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HandBook);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HandBook));

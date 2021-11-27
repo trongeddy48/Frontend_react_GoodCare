@@ -102,6 +102,10 @@ const getAllHandbook = () => {
     return axios.get(`/api/get-handbook`)
 }
 
+const getAllDetailHandbookById = (data) => {
+    return axios.get(`/api/get-detail-handbook-by-id?id=${data.id}`)
+}
+
 export { 
     handleLoginApi, getAllUsers,
     createNewUserService, deleteUserService, 
@@ -113,5 +117,5 @@ export {
     postVerifyBookAppointment, createNewSpecialty,
     getAllSpecialty, getAllDetailSpecialtyById,
     createNewClinic, getAllClinic, getAllDetailClinicById,
-    createNewHandbook, getAllHandbook, 
+    createNewHandbook, getAllHandbook, getAllDetailHandbookById
 }
