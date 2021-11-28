@@ -38,8 +38,8 @@ class About extends Component {
                     <thead>
                         <tr>
                             <th>Ngày</th>
-                            <th>Đã xác nhận</th>
-                            <th>Đã phát hiện</th>
+                            <th>Số ca đã phát hiện</th>
+                            <th>Số ca đã xác nhận</th>
                             <th>Tử vong</th>
                             <th>Hồi phục</th>
                         </tr>

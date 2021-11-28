@@ -106,6 +106,10 @@ const getAllDetailHandbookById = (data) => {
     return axios.get(`/api/get-detail-handbook-by-id?id=${data.id}`)
 }
 
+const getAllPatientForDoctor = (data) => {
+    return axios.get(`/api/get-list-patient-for-doctor?doctorId=${data.doctorId}&date=${data.date}`)
+}
+
 const getDataCovid = () => {
     return axios.get(`https://api.covid19api.com/country/vietnam?from=2021-11-19T00:00:00Z&to=2021-11-27T00:00:00Z`)
 }
@@ -122,5 +126,5 @@ export {
     getAllSpecialty, getAllDetailSpecialtyById,
     createNewClinic, getAllClinic, getAllDetailClinicById,
     createNewHandbook, getAllHandbook, getAllDetailHandbookById,
-    getDataCovid
+    getDataCovid, getAllPatientForDoctor
 }
