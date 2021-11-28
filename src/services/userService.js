@@ -110,9 +110,29 @@ const getAllPatientForDoctor = (data) => {
     return axios.get(`/api/get-list-patient-for-doctor?doctorId=${data.doctorId}&date=${data.date}`)
 }
 
-const getDataCovid = () => {
-    return axios.get(`https://api.covid19api.com/country/vietnam?from=2021-11-19T00:00:00Z&to=2021-11-27T00:00:00Z`)
+const postSendRemedy = (data) => {
+    return axios.post('/api/send-remedy', data)
 }
+
+// const getDataCovid = () => {
+//     let today = new Date();
+//     let dd = today.getDate();
+//     let mm = today.getMonth() + 1;
+//     let yyyy = today.getFullYear();
+//     today = dd + '/' + mm + '/' + yyyy;
+//     return axios.get(`https://api.covid19api.com/country/vietnam?from=2021-11-19T00:00:00Z&to=2021-11-27T00:00:00Z`)
+// }
+
+const getDataCovid = () => {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    
+    today = yyyy + '-' + mm + '-' + dd;
+    var url = "https://api.covid19api.com/country/vietnam?from=2021-11-20T00:00:00Z&to="+today;
+    return axios.get(url)
+    }
 
 export { 
     handleLoginApi, getAllUsers,
@@ -126,5 +146,5 @@ export {
     getAllSpecialty, getAllDetailSpecialtyById,
     createNewClinic, getAllClinic, getAllDetailClinicById,
     createNewHandbook, getAllHandbook, getAllDetailHandbookById,
-    getDataCovid, getAllPatientForDoctor
+    getDataCovid, getAllPatientForDoctor, postSendRemedy
 }

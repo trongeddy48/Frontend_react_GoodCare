@@ -5,6 +5,11 @@ table {
     border-collapse: collapse;
     width: 100%;
     font-size: 14px;
+
+    thead {
+        background-color: hsl(189, 80%, 66%);
+        border: 1px solid black;
+    }
   }
   
   td, th {
