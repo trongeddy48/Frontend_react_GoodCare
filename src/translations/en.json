@@ -61,8 +61,16 @@
         "more-info": "More Info",
         "specialty-popular": "Popular specialties",
         "view-all": "More Info",
+        "clinic-popular": "Popular Clinics",
+        "view-clinic": "More Info",
         "handbook": "Handbook",
-        "view-handbook": "More Info"
+        "view-handbook": "More Info",
+        "datacovid": "Data Covid-19 of Vietnam",
+        "day": "Days",
+        "confirm": "Actived",
+        "active": "Confirmed",
+        "death": "Deaths",
+        "recover": "Recovered"
     },
     "manage-schedule": {
         "title": "Manage Schedule",

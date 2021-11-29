@@ -31,17 +31,17 @@ class About extends Component {
         return (
             <div className="section-share section-about">
                 <div className="section-about-header">
-                    Thông tin về Covid-19 tại Việt Nam
+                    <FormattedMessage id="homepage.datacovid" />
                 </div>
                 <div className="section-about-body">
                 <table>
                     <thead>
                         <tr>
-                            <th>Ngày</th>
-                            <th>Số ca đã phát hiện</th>
-                            <th>Số ca đã xác nhận</th>
-                            <th>Tử vong</th>
-                            <th>Hồi phục</th>
+                            <th><FormattedMessage id="homepage.day" /></th>
+                            <th><FormattedMessage id="homepage.confirm" /></th>
+                            <th><FormattedMessage id="homepage.active" /></th>
+                            <th><FormattedMessage id="homepage.death" /></th>
+                            <th><FormattedMessage id="homepage.recover" /></th>
                         </tr>
                     </thead>
                     <tbody>

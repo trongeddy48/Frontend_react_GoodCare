@@ -60,8 +60,16 @@
         "more-info": "Xem thêm",
         "specialty-popular": "Chuyên khoa phổ biến",
         "view-all": "Xem thêm",
+        "clinic-popular": "Cơ sở y tế phổ biến",
+        "view-clinic": "Xem thêm",
         "handbook": "Cẩm nang",
-        "view-handbook": "Xem thêm"
+        "view-handbook": "Xem thêm",
+        "datacovid": "Dữ liệu Covid-19 tại Việt Nam",
+        "day": "Ngày",
+        "confirm": "Số ca đã phát hiện",
+        "active": "Số ca đã xác nhận",
+        "death": "Số ca tử vong",
+        "recover": "Số ca đã phục hồi"
     },
     "manage-schedule": {
         "title": "Quản lý lịch khám",

@@ -96,7 +96,6 @@ class DoctorSchedule extends Component {
                     allVailableTime: res.data ? res.data : [],
                 })
             }
-            console.log('res: ', res);
         }
     }
 
@@ -105,7 +104,6 @@ class DoctorSchedule extends Component {
             isOpenModalBooking: true,
             dataScheduleTimeModal: time
         })
-        console.log('time: ', time);
     }
 
     closeBookingModal = () => {
