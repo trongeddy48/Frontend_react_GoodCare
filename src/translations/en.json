@@ -122,6 +122,25 @@
             "note": "Note",
             "specialty": "Choose Specialty...",
             "select-clinic": "Choose Clinic..."
+        },
+        "manage-clinic": {
+            "title": "Infomation Clinics",
+            "nameclinic": "Clinic's name",
+            "pictureclinic": "Clinic's picture",
+            "addressclinic": "Clinic's address",
+            "save": "Save Info Clinic"
+        },
+        "manage-specialty": {
+            "title": "Infomation Specialties",
+            "namespecialty": "Specialty's name",
+            "picturespecialty": "Specialty's picture",
+            "savespecialty": "Save Info Specialty"
+        },
+        "manage-handbook": {
+            "title": "Infomation Handbooks",
+            "namehandbook": "Handbook's name",
+            "picturehandbook": "Handbook's picture",
+            "savehandbook": "Save Info Handbook"
         }
     }
 }

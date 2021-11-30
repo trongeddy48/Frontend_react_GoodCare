@@ -121,6 +121,25 @@
             "note": "Ghi chú",
             "specialty": "Chọn chuyên khoa",
             "select-clinic": "Chọn phòng khám"
+        },
+        "manage-clinic": {
+            "title": "QUẢN LÝ PHÒNG KHÁM",
+            "nameclinic": "Tên phòng khám",
+            "pictureclinic": "Ảnh phòng khám",
+            "addressclinic": "Địa chỉ phòng khám",
+            "save": "Lưu thông tin"
+        },
+        "manage-specialty": {
+            "title": "QUẢN LÝ CHUYÊN KHOA",
+            "namespecialty": "Tên chuyên khoa",
+            "picturespecialty": "Ảnh chuyên khoa",
+            "savespecialty": "Lưu thông tin"
+        },
+        "manage-handbook": {
+            "title": "QUẢN LÝ CẨM NANG",
+            "namehandbook": "Tiêu đề cẩm nang",
+            "picturehandbook": "Ảnh cẩm nang",
+            "savehandbook": "Lưu thông tin"
         }
     }
 }

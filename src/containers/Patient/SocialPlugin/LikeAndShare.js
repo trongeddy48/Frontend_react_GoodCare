@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { LANGUAGES } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
+require('dotenv').config();
 
 class LikeAndShare extends Component {
     constructor(props) {

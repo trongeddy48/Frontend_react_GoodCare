@@ -9,6 +9,7 @@ import DoctorSchedule from './DoctorSchedule';
 import DoctorExtraInfo from './DoctorExtraInfo';
 import Comment from '../SocialPlugin/Comment';
 import LikeAndShare from '../SocialPlugin/LikeAndShare';
+require('dotenv').config();
 
 class DetailDoctor extends Component {
 

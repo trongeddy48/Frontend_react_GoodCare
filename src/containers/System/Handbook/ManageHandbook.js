@@ -77,17 +77,17 @@ class ManageHandbook extends Component {
     render() {
         return (
             <div className="manage-specialty-container">
-                <div className="ms-title">QUẢN LÝ CẨM NANG</div>
+                <div className="ms-title"><FormattedMessage id="admin.manage-handbook.title" /></div>
                 
                 <div className="add-new-specialty row">
                     <div className="col-6 form-group">
-                        <label>Tiêu đề cẩm nang</label>
+                        <label><FormattedMessage id="admin.manage-handbook.namehandbook" /></label>
                         <input className="form-control" type="text" value={this.state.name} 
                             onChange={(event) => this.handleOnChangeInput(event, 'name')}
                         />
                     </div>
                     <div className="col-6 form-group">
-                        <label>Ảnh cẩm nang</label>
+                        <label><FormattedMessage id="admin.manage-handbook.picturehandbook" /></label>
                         <input className="form-control-file" type="file" 
                             onChange={(event) => this.handleOnchangeImage(event)}
                         />
@@ -103,7 +103,7 @@ class ManageHandbook extends Component {
                     <div className="col-12">
                         <button className="btn-save-specialty"
                             onClick={() => this.handleSaveNewHandbook()}
-                        >Lưu</button>
+                        ><FormattedMessage id="admin.manage-handbook.savehandbook" /></button>
                     </div>
                 </div>
 
