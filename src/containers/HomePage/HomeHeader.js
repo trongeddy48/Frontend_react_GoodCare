@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './HomeHeader.scss';
-import logo from '../../assets/logogc.png';
+import logo from '../../assets/logogc-ft.png';
 import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from "../../utils";
 import { withRouter } from 'react-router';

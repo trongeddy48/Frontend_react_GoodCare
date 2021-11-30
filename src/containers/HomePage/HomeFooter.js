@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
+import './HomeFooter.scss';
+import logo from '../../assets/logogc-ft.png';
 
 class HomeFooter extends Component {
 
     render() {
         return (
-            <div className="home-footer">
-                <p>&copy; 2021 GoodCare. More infomation ? Contact me now !!
-                    <a target="blank" href="https://www.facebook.com/thanhtrong.nguyen.735"> &#8594; Click here &#8592;</a>
-                </p>
-                {/* <div className="footer-content-left">
-                    <p>&copy; 2021 GoodCare. More infomation ? Contact me now !!
-                        <a target="blank" href="https://www.facebook.com/thanhtrong.nguyen.735"> &#8594; Click here &#8592;</a>
-                    </p>
+            <footer>
+                <div className="left-content">
+                    <div className="logo-footer">
+                        <img src={logo} alt="logo" />
+                    </div>
+                    <div className="text-logo">
+                        <p>asdasd</p>
+                    </div>
                 </div>
-                <div className="footer-content-right">
-                    <p>
-                        <a target="blank" href="#"><i className="fab fa-facebook-square"></i></a>
-                    </p>
-                </div> */}
-            </div>
+                <div className="center-content">
+                    Chao2 em
+                </div>
+                <div className="right-content">
+                    Chao2 em
+                </div>
+            </footer>
         );
     }
 }

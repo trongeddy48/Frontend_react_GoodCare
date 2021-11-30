@@ -130,7 +130,7 @@ const getDataCovid = () => {
     var yyyy = today.getFullYear();
     
     today = yyyy + '-' + mm + '-' + dd;
-    var url = "https://api.covid19api.com/country/vietnam?from=2021-11-20T00:00:00Z&to="+today;
+    var url = "https://api.covid19api.com/country/vietnam?from=2021-11-28T00:00:00Z&to="+today;
     return axios.get(url)
     }
 
