@@ -34,7 +34,11 @@
                 padding-top: 10px;
 
                 .like-share-plugin{
-                    margin: 10px 0 20px 0;
+                    margin: 20px 10px 30px 10px;
+                    
+                    .fb-share{
+                        height: 30px;
+                    }
                 }
             }
         }

@@ -49,9 +49,11 @@ class DetailDoctor extends Component {
             nameEn = `${detailDoctor.positionData.valueEn}, ${detailDoctor.firstName} ${detailDoctor.lastName}`;
         }
 
+
         let currentURL = +process.env.REACT_APP_IS_LOCALHOST === 1 ? 
             "https://chatbot-goodcare.herokuapp.com/" : window.location.href;
-        
+
+
         return (
             <>
                 <HomeHeader 

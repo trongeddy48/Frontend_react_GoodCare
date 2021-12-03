@@ -18,14 +18,15 @@ class LikeAndShare extends Component {
         }
 
         let { language } = this.props;
-        let locale = language === LANGUAGES.VI ? 'vi_VN' : 'en_US'
+        let locale = language === LANGUAGES.VI ? 'vi_VN' : 'en_US';
         window.fbAsyncInit = function () {
             window.FB.init({
                 appId: process.env.REACT_APP_FACEBOOK_APP_ID,
+                autoLogAppEvents : 1,
                 cookie: true,  // enable cookies to allow the server to access
                 // the session
-                xfbml: true,  // parse social plugins on this page
-                version: 'v2.5' // use version 2.1
+                xfbml: 1,  // parse social plugins on this page
+                version: 'v12.0' // use version 2.1
             });
         };
         // Load the SDK asynchronously

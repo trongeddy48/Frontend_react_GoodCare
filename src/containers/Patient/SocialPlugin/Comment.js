@@ -24,8 +24,8 @@ class Comment extends Component {
                 appId: process.env.REACT_APP_FACEBOOK_APP_ID,
                 cookie: true,  // enable cookies to allow the server to access
                 // the session
-                xfbml: true,  // parse social plugins on this page
-                version: 'v2.5' // use version 2.1
+                xfbml: 1,  // parse social plugins on this page
+                version: 'v12.0' // use version 2.1
             });
         };
         // Load the SDK asynchronously

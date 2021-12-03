@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 import { FormattedMessage } from 'react-intl';
 import './ManagePatient.scss';
 import DatePicker from '../../../components/Input/DatePicker';
-import { getAllPatientForDoctor, postSendRemedy } from '../../../services/userService';
+import { getAllPatientForDoctor, postSendRemedy, postSendCancelBooking } from '../../../services/userService';
 import moment from 'moment';
 import { reduce } from 'lodash';
 import { LANGUAGES } from '../../../utils';
 import RemedyModal from './RemedyModal';
+import CancelBook from './CancelBook';
 import { toast } from 'react-toastify';
 import LoadingOverlay from 'react-loading-overlay';
 
@@ -20,6 +21,8 @@ class ManagePatient extends Component {
             dataPatient: [],
             isOpenRemedyModal: false,
             dataModal: {},
+            isOpenCancelModal: false,
+            dataCancelModal: {},
             isShowLoading: false
         }
     }
@@ -72,10 +75,31 @@ class ManagePatient extends Component {
         })
     }
 
+    handleBtnDelete = (item) => {
+        let dataDelete = {
+            doctorId: item.doctorId,
+            patientId: item.patientId,
+            email: item.patientData.email,
+            timeType: item.timeType,
+            patientName: item.patientData.firstName,
+        }
+        this.setState({
+            isOpenCancelModal: true,
+            dataCancelModal: dataDelete
+        })
+    }
+
     closeRemedyModal = () => {
         this.setState({
             isOpenRemedyModal: false,
             dataModal: {}
+        })
+    }
+
+    closeCancelModal = () => {
+        this.setState({
+            isOpenCancelModal: false,
+            dataCancelModal: {}
         })
     }
 
@@ -107,9 +131,38 @@ class ManagePatient extends Component {
             toast.error('Gửi đơn thuốc thất bại !')
         }
     }
+
+    sendCancelBook = async (dataChildModalCancel) => {
+        let { dataCancelModal } = this.state;
+        this.setState({
+            isShowLoading: true
+        })
+        let res = await postSendCancelBooking({
+            email: dataChildModalCancel.email,
+            doctorId: dataCancelModal.doctorId,
+            patientId: dataCancelModal.patientId,
+            timeType: dataCancelModal.timeType,
+            languge: this.props.language,
+            patientName: dataCancelModal.patientName
+        });
+        if(res && res.errCode === 0){
+            this.setState({
+                isShowLoading: false
+            })
+            toast.success('Hủy lịch hẹn thành công !');
+            this.closeCancelModal();
+            await this.getDataPatient();
+        }else{
+            this.setState({
+                isShowLoading: false
+            })
+            toast.error('Hủy lịch hẹn thất bại !');
+            console.log("Error send cancel booking: ", res);
+        }
+    }
     
     render() {
-        let { dataPatient, isOpenRemedyModal, dataModal } = this.state;
+        let { dataPatient, isOpenRemedyModal, dataModal, isOpenCancelModal, dataCancelModal } = this.state;
         let { language } = this.props;
         return (
             <>
@@ -160,7 +213,9 @@ class ManagePatient extends Component {
                                                     <button className="mp-btn-confirm"
                                                         onClick={() => this.handleBtnConfirm(item)}
                                                     >Xác nhận</button>
-                                                    
+                                                    <button className="mp-btn-delete"
+                                                        onClick={() => this.handleBtnDelete(item)}
+                                                    >Hủy lịch hẹn này</button>
                                                 </td>
                                             </tr>
                                         )
@@ -179,6 +234,12 @@ class ManagePatient extends Component {
                     dataModal={dataModal}
                     closeRemedyModal={this.closeRemedyModal}
                     sendRemedy={this.sendRemedy}
+                />
+                <CancelBook 
+                    isOpenModal={isOpenCancelModal}
+                    dataModal={dataCancelModal}
+                    closeCancelModal={this.closeCancelModal}
+                    sendCancelBook={this.sendCancelBook}
                 />
                 </LoadingOverlay>
             </>

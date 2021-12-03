@@ -114,6 +114,10 @@ const postSendRemedy = (data) => {
     return axios.post('/api/send-remedy', data)
 }
 
+const postSendCancelBooking = (data) => {
+    return axios.post('/api/send-cancel-booking', data)
+}
+
 // const getDataCovid = () => {
 //     let today = new Date();
 //     let dd = today.getDate();
@@ -131,9 +135,10 @@ const getDataCovid = () => {
     
     today = yyyy + '-' + mm + '-' + dd;
 
-    var lastday = yyyy + '-' + mm + '-' + (dd - 8);
+    // var lastday = yyyy + '-' + mm + '-' + (dd - 8);
 
-    var dataCovid = "https://api.covid19api.com/country/vietnam?from="+lastday+"T00:00:00Z&to="+today;
+    // var dataCovid = "https://api.covid19api.com/country/vietnam?from="+lastday+"T00:00:00Z&to="+today+"T00:00:00Z";
+    var dataCovid = "https://api.covid19api.com/country/vietnam?from=2021-12-01T00:00:00Z&to="+today;
     return axios.get(dataCovid)
     }
 
@@ -149,5 +154,6 @@ export {
     getAllSpecialty, getAllDetailSpecialtyById,
     createNewClinic, getAllClinic, getAllDetailClinicById,
     createNewHandbook, getAllHandbook, getAllDetailHandbookById,
-    getDataCovid, getAllPatientForDoctor, postSendRemedy
+    getDataCovid, getAllPatientForDoctor, postSendRemedy,
+    postSendCancelBooking, 
 }
