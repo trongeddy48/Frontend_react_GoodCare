@@ -78,24 +78,24 @@ class Login extends Component {
             <div className ="login-background">
                 <div className="login-container">
                     <div className="login-content">
-                        <div className="col-12 text-login">Login</div>
+                        <div className="col-12 text-login">Đăng nhập Quản trị GoodCare</div>
                         <div className="col-12 form-group login-input">
-                            <label>Username:</label>
+                            <label>Tên đăng nhập:</label>
                             <input 
                                 type="text" 
                                 className="form-control" 
-                                placeholder="Enter your Username" 
+                                placeholder="Nhập tên đăng nhập..." 
                                 value={this.state.username} 
                                 onChange={(event) => this.handleOnChangeUsername(event)}
                             />
                         </div>
                         <div className="col-12 form-group login-input">
-                            <label>Password:</label>
+                            <label>Mật khẩu:</label>
                             <div className="custom-input-password">
                                 <input 
                                     type={this.state.isShowPassword ? 'text' : 'password'} 
                                     className="form-control" 
-                                    placeholder="Enter your Password" 
+                                    placeholder="Nhập mật khẩu..." 
                                     onChange={(event) => {this.handleOnChangePassword(event)}}
                                     onKeyDown={(event) => this.handleEnterKey(event)}
                                 />
@@ -109,13 +109,13 @@ class Login extends Component {
                             {this.state.errMessage}
                         </div>
                         <div className="col-12">
-                            <button className="btn-login" onClick={() => {this.handleLogin()}}>Login</button>
+                            <button className="btn-login" onClick={() => {this.handleLogin()}}>Đăng nhập</button>
                         </div>
                         <div className="col-12">
-                            <span className="forgot-password">Forgot your password ?</span>
+                            <span className="forgot-password">Bạn đã quên mật khẩu ?</span>
                         </div>
                         <div className="col-12 text-center mt-3">
-                            <span className="text-other-login">Or login with:</span>
+                            <span className="text-other-login">Hoặc bạn có thể đăng nhập với:</span>
                         </div>
                         <div className="col-12 social-login">
                             <i className="fab fa-google-plus-g google"></i>
