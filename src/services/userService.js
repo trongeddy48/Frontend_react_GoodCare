@@ -135,10 +135,10 @@ const getDataCovid = () => {
     
     today = yyyy + '-' + mm + '-' + dd;
 
-    // var lastday = yyyy + '-' + mm + '-' + (dd - 8);
+    var lastday = yyyy + '-' + mm + '-' + (dd - 6);
 
-    // var dataCovid = "https://api.covid19api.com/country/vietnam?from="+lastday+"T00:00:00Z&to="+today+"T00:00:00Z";
-    var dataCovid = "https://api.covid19api.com/country/vietnam?from=2021-12-01T00:00:00Z&to="+today;
+    var dataCovid = "https://api.covid19api.com/country/vietnam?from="+lastday+"T00:00:00Z&to="+today+"T00:00:00Z";
+    // var dataCovid = "https://api.covid19api.com/country/vietnam?from=2021-12-01T00:00:00Z&to="+today;
     return axios.get(dataCovid)
     }
 

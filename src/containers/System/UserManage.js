@@ -125,24 +125,24 @@ class UserManage extends Component {
                     />
                 }
                 <div className="title text-center">
-                    Manage Users
+                    QUẢN LÝ NGƯỜI DÙNG
                 </div>
                 <div className="mx-1">
                     <button 
                     className="btn btn-primary px-3"
                     onClick={()=>this.handleAddNewUser()}
-                    ><i className="fas fa-plus"></i> Add new User</button>
+                    ><i className="fas fa-plus"></i> Thêm người dùng</button>
                 </div>
                 <div className="users-table mt-3 mx-2">
                 <table id="customers">
                 <tbody>
                     <tr>
                         <th>Email</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Address</th>
-                        <th>Phone Number</th>
-                        <th>Action</th>
+                        <th>Tên</th>
+                        <th>Họ</th>
+                        <th>Địa chỉ</th>
+                        <th>Số điện thoại</th>
+                        <th>Chức năng</th>
                     </tr>
                         { arrUsers && arrUsers.map((item, index) => {
                             return(
