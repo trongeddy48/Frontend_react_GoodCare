@@ -80,11 +80,11 @@ class Login extends Component {
                     <div className="login-content">
                         <div className="col-12 text-login">Đăng nhập Quản trị GoodCare</div>
                         <div className="col-12 form-group login-input">
-                            <label>Tên đăng nhập:</label>
+                            <label>Email:</label>
                             <input 
                                 type="text" 
                                 className="form-control" 
-                                placeholder="Nhập tên đăng nhập..." 
+                                placeholder="Nhập Email dùng để đăng nhập..." 
                                 value={this.state.username} 
                                 onChange={(event) => this.handleOnChangeUsername(event)}
                             />

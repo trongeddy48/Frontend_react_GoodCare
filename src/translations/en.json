@@ -8,7 +8,7 @@
         "selectdoctor" : "Choose a good doctor",
         "fee" : "Checkup package",
         "checkhealth" : "General health check",
-        "support" : "Log In",
+        "support" : "Managerment GoodCare",
         "welcome": "Welcome, "
     },
     "banner" : {
@@ -27,8 +27,8 @@
             "manage-user": "Users System",
             "manage-doctor": "Manage Doctors",
             "manage-admin": "Manage Admins",
-            "crud": "CRUD User",
-            "crud-redux": "CRUD Redux",
+            "crud": "Manage All Users",
+            "crud-redux": "Manage Accounts",
             "clinic": "Clinics",
             "manage-clinic": "Manage Clinics",
             "specialty": "Specialties",

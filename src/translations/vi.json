@@ -8,7 +8,7 @@
         "selectdoctor" : "Chọn bác sĩ giỏi",
         "fee" : "Gói khám",
         "checkhealth" : "Khám sức khỏe tổng quát",
-        "support" : "Đăng nhập",
+        "support" : "Đăng nhập quản trị GoodCare",
         "welcome": "Xin chào, "
     },
     "banner" : {
@@ -26,8 +26,8 @@
             "manage-user": "Người dùng",
             "manage-doctor": "Quản lý bác sĩ",
             "manage-admin": "Quản lý admin",
-            "crud": "CRUD User",
-            "crud-redux": "CRUD Redux",
+            "crud": "Quản lý người dùng",
+            "crud-redux": "Quản lý tài khoản",
             "clinic": "Phòng khám",
             "manage-clinic": "Quản lý phòng khám",
             "specialty": "Chuyên khoa",

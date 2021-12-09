@@ -57,11 +57,11 @@ class TableManageUser extends Component {
                     <tbody>
                         <tr>
                             <th>Email</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Address</th>
-                            <th>Phone Number</th>
-                            <th>Action</th>
+                            <th>Tên</th>
+                            <th>Họ</th>
+                            <th>Địa chỉ</th>
+                            <th>Số điện thoại</th>
+                            <th>Chức năng</th>
                         </tr>
                         {arrUsers && arrUsers.length > 0 &&
                         

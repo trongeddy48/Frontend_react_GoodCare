@@ -79,7 +79,7 @@ class ModalEditUser extends Component {
                 className={'modal-user-container'}
                 size="lg"
             >
-            <ModalHeader toggle={()=>{this.toggle()}}>Edit a user</ModalHeader>
+            <ModalHeader toggle={()=>{this.toggle()}}>Chỉnh sửa nhanh</ModalHeader>
             <ModalBody>
                 <div className="modal-user-body">
                     <div className="input-container">
@@ -92,7 +92,7 @@ class ModalEditUser extends Component {
                         />
                     </div>
                     <div className="input-container">
-                        <label>Password</label>
+                        <label>Mật khẩu</label>
                         <input 
                             type="password" 
                             onChange={(event)=> {this.handleOnChageInput(event, "password")}}
@@ -101,7 +101,7 @@ class ModalEditUser extends Component {
                         />
                     </div>
                     <div className="input-container">
-                        <label>First Name</label>
+                        <label>Tên</label>
                         <input 
                             type="text" 
                             onChange={(event)=> {this.handleOnChageInput(event, "firstName")}}
@@ -109,7 +109,7 @@ class ModalEditUser extends Component {
                         />
                     </div>
                     <div className="input-container">
-                        <label>Last Name</label>
+                        <label>Họ</label>
                         <input 
                             type="text" 
                             onChange={(event)=> {this.handleOnChageInput(event, "lastName")}}
@@ -117,7 +117,7 @@ class ModalEditUser extends Component {
                         />
                     </div>
                     <div className="input-container">
-                        <label>Address</label>
+                        <label>Địa chỉ</label>
                         <input 
                             type="text" 
                             onChange={(event)=> {this.handleOnChageInput(event, "address")}}
@@ -125,7 +125,7 @@ class ModalEditUser extends Component {
                         />
                     </div>
                     <div className="input-container">
-                        <label>Phone Number</label>
+                        <label>Số điện thoại</label>
                         <input 
                             type="text" 
                             onChange={(event)=> {this.handleOnChageInput(event, "phonenumber")}}
@@ -140,8 +140,8 @@ class ModalEditUser extends Component {
                     color="primary" 
                     className="px-3" 
                     onClick={()=>{this.handleSaveUser()}}
-                    >Save changes</Button>{' '}
-                    <Button color="secondary" className="px-3" onClick={()=>{this.toggle()}}>Close</Button>
+                    >Lưu thay đổi</Button>{' '}
+                    <Button color="secondary" className="px-3" onClick={()=>{this.toggle()}}>Đóng</Button>
                 </ModalFooter>
             </Modal>
       )
