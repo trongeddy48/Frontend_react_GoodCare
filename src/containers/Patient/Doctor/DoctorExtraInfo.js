@@ -56,12 +56,18 @@ class DoctorExtraInfo extends Component {
                     <div className="text-address">
                         <FormattedMessage id="patient.extra-info-doctor.text-address"/>
                     </div>
-                    <div className="name-clinic">
+                    <div className='name-clinic'>
+                        { extraInfo && extraInfo.clinicData && extraInfo.clinicData.name ? extraInfo.clinicData.name : '' }
+                    </div>
+                    <div className='address-clinic'>
+                        { extraInfo && extraInfo.clinicData && extraInfo.clinicData.address ? extraInfo.clinicData.address : '' }
+                    </div>
+                    {/* <div className="name-clinic">
                         {extraInfo && extraInfo.nameClinic ? extraInfo.nameClinic : ''}
                     </div>
                     <div className="detail-address">
                         {extraInfo && extraInfo.addressClinic ? extraInfo.addressClinic : ''}
-                    </div>
+                    </div> */}
                 </div>
                 <div className="content-down">
                     { isShowDetailInfo === false && 
